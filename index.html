@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My Portfolio</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!-- ============================================================
+         NAVIGATION
+    ============================================================ -->
+    <nav class="navbar">
+      <span class="nav-logo">Your Name</span>
+      <ul class="nav-links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+      <!-- TODO: Ask Copilot to add a dark mode toggle button here -->
+    </nav>
+
+    <!-- ============================================================
+         HERO
+    ============================================================ -->
+    <section class="hero" id="hero">
+      <div class="hero-content">
+        <h1>Hi, I'm <span class="highlight">Your Name</span> 👋</h1>
+        <!-- TODO: Update this tagline — try asking Copilot to help you write one
+             based on your background and interests -->
+        <p class="hero-subtitle">Computer science student passionate about building things.</p>
+        <a href="#projects" class="btn">See My Work</a>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         ABOUT
+    ============================================================ -->
+    <section class="section" id="about">
+      <h2>About Me</h2>
+      <div class="about-grid">
+        <div class="about-text">
+          <!-- TODO: Replace this placeholder with your real bio.
+               Try prompting Copilot: "Write a short professional bio for a CS student
+               interested in [your interests]. Keep it warm and personal." -->
+          <p>
+            I'm a computer science student at [Your University]. I'm interested in
+            [your interests here]. Outside of code, I enjoy [hobbies].
+          </p>
+          <p>
+            I'm currently [looking for internships / working on X / studying Y].
+          </p>
+        </div>
+        <div class="about-image">
+          <!-- TODO: Add your photo or a placeholder avatar -->
+          <div class="avatar-placeholder">📸</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         PROJECTS
+         Projects are rendered from the `projects` array in script.js.
+         Add your real projects there — Copilot can help you fill in the data!
+    ============================================================ -->
+    <section class="section section-alt" id="projects">
+      <h2>Projects</h2>
+      <div class="projects-grid" id="projects-container">
+        <!-- Populated by script.js -->
+      </div>
+    </section>
+
+    <!-- ============================================================
+         SKILLS
+    ============================================================ -->
+    <section class="section" id="skills">
+      <h2>Skills</h2>
+      <!-- TODO: Ask Copilot to generate a styled skills section using your actual
+           tech stack. Try: "Add a skills section with badges for these technologies: ..." -->
+      <div class="skills-container" id="skills-container">
+        <!-- Populated by script.js -->
+      </div>
+    </section>
+
+    <!-- ============================================================
+         CONTACT
+    ============================================================ -->
+    <section class="section section-alt" id="contact">
+      <h2>Get In Touch</h2>
+      <p class="contact-intro">
+        <!-- TODO: Update this message -->
+        I'm currently open to new opportunities. Feel free to reach out!
+      </p>
+      <div class="contact-links">
+        <!-- TODO: Add your real links -->
+        <a href="mailto:you@email.com" class="btn">✉️ Email Me</a>
+        <a href="https://github.com/yourusername" class="btn btn-outline" target="_blank">
+          GitHub
+        </a>
+        <a href="https://linkedin.com/in/yourprofile" class="btn btn-outline" target="_blank">
+          LinkedIn
+        </a>
+      </div>
+    </section>
+
+    <footer>
+      <p>Built with GitHub Copilot &amp; GitHub Pages · <span id="year"></span></p>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
