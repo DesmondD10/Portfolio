@@ -2,7 +2,7 @@
 
 > **Assignment:** Build and deploy your personal portfolio website using GitHub Copilot.
 
-You'll use AI-assisted coding to customize this template into a real portfolio you can share with employers, internship programs, and graduate school applications. Along the way you'll practice writing effective prompts, using different Copilot features in VS Code, and working with GitHub Pages.
+You'll use AI-assisted coding to customize this template into a real portfolio you can share with employers, internships, and graduate schools. Along the way you'll practice writing effective prompts, using different Copilot features in VS Code, and working with GitHub Pages.
 
 **No framework required.** This starter uses plain HTML, CSS, and JavaScript — no React, no npm, no build step. That's intentional: it keeps the focus on Copilot and the fundamentals, and means you can open `index.html` directly in a browser. If you're curious about frameworks, Phase 3 is a good place to experiment with one — but you definitely don't need to.
 
