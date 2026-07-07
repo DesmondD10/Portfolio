@@ -20,7 +20,7 @@ For each entry, note:
 
 ### Entry 1
 - **Feature/task:** 
-  For this feature I needed to make a short bio for my Hero
+  For this feature I needed to make a short bio for my Hero.
 - **Copilot feature used:** 
   I used ask for this.
 - **Prompt:**
