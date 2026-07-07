@@ -123,6 +123,23 @@ Then write a short reflection (a few paragraphs, in your journal or as a convers
 4. What's one thing in the codebase that you now understand better than when you started?
 5. Is there anything the site still needs that you'd want to tackle next?
 
+### Before you share it — rename your repo
+
+When you're happy with your site, rename the repo from `portfolio-starter` to just `portfolio`. This makes your shareable URL:
+
+```
+https://YOUR-USERNAME.github.io/portfolio/
+```
+
+To rename: go to your repo on GitHub → **Settings** → scroll to the top → update the **Repository name** field → hit **Rename**.
+
+Then update your local remote to match:
+```bash
+git remote set-url origin https://github.com/YOUR-USERNAME/portfolio.git
+```
+
+GitHub will redirect the old URL for a while, but update any links you've shared once you're done.
+
 ---
 
 ## 📚 Reference Docs

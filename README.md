@@ -2,7 +2,7 @@
 
 > **Assignment:** Build and deploy your personal portfolio website using GitHub Copilot.
 
-You'll use AI-assisted coding to customize this template into a real portfolio you can share with employers and the world. Along the way you'll practice writing effective prompts, using different Copilot features in VS Code, and working with GitHub Pages.
+You'll use AI-assisted coding to customize this template into a real portfolio you can share with employers, internship programs, and graduate school applications. Along the way you'll practice writing effective prompts, using different Copilot features in VS Code, and working with GitHub Pages.
 
 **No framework required.** This starter uses plain HTML, CSS, and JavaScript — no React, no npm, no build step. That's intentional: it keeps the focus on Copilot and the fundamentals, and means you can open `index.html` directly in a browser. If you're curious about frameworks, Phase 3 is a good place to experiment with one — but you definitely don't need to.
 
@@ -22,6 +22,7 @@ cd portfolio-starter
 ```
 
 Open the folder in VS Code:
+
 ```bash
 code .
 ```
@@ -54,7 +55,7 @@ This is the same pipeline pattern used in real production software, just much si
 This assignment is designed to give you hands-on experience with several Copilot features. Here's a quick reference:
 
 | Feature | How to use it | Best for |
-|---|---|---|
+| --- | --- | --- |
 | **Inline completion** | Just start typing — accept with `Tab` | Writing code fast |
 | **Inline chat** | `Cmd+I` / `Ctrl+I` on selected code | Editing a specific block |
 | **Copilot Chat (Ask)** | Open Chat panel → Ask mode | Questions, explanations |
@@ -76,7 +77,7 @@ This assignment is designed to give you hands-on experience with several Copilot
 
 ## 📁 Project Structure
 
-```
+```javascript
 portfolio-starter/
 ├── index.html              # Main page — all sections are here
 ├── style.css               # All styles, using CSS custom properties
