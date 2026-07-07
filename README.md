@@ -4,6 +4,8 @@
 
 You'll use AI-assisted coding to customize this template into a real portfolio you can share with employers and the world. Along the way you'll practice writing effective prompts, using different Copilot features in VS Code, and working with GitHub Pages.
 
+**No framework required.** This starter uses plain HTML, CSS, and JavaScript — no React, no npm, no build step. That's intentional: it keeps the focus on Copilot and the fundamentals, and means you can open `index.html` directly in a browser. If you're curious about frameworks, Phase 3 is a good place to experiment with one — but you definitely don't need to.
+
 ---
 
 ## 🚀 Getting Started
@@ -32,7 +34,18 @@ code .
 
 Your site will be live at: `https://YOUR-USERNAME.github.io/portfolio-starter/`
 
-> ✅ **Verify it works**: After your first push, wait ~1 minute and visit the URL above. You should see the starter site.
+### ⚙️ What happens when you push?
+
+Every time you push to `main`, a **CI/CD pipeline** runs automatically. Here's what that means:
+
+- **CI (Continuous Integration):** your code is picked up by GitHub's servers the moment it lands on `main`
+- **CD (Continuous Deployment):** GitHub Actions runs the workflow in `.github/workflows/deploy.yml`, which packages your files and publishes them to GitHub Pages
+
+You can watch it happen in real time: go to your repo on GitHub → **Actions** tab. You'll see a workflow run appear within seconds of pushing. It usually takes about 1 minute to complete — that's the delay between pushing code and seeing your live site update.
+
+This is the same pipeline pattern used in real production software, just much simpler. In a professional codebase, CI/CD might also run tests, lint code, and deploy to multiple environments — but the core idea is the same: *push code, automation takes it the rest of the way.*
+
+> ✅ **Verify it works**: After your first push, check the Actions tab, wait for the green checkmark, then visit your URL.
 
 ---
 
