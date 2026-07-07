@@ -10,15 +10,30 @@
   --color-accent: #4f46e5;
   --color-accent-hover: #4338ca;
   --color-border: #e2e8f0;
+  --color-surface: #ffffff;
+  --color-surface-hover: #f8fafc;
+  --color-button-bg: #f8fafc;
+  --color-button-text: #1a1a2e;
   --font-main: 'Segoe UI', system-ui, sans-serif;
   --radius: 10px;
   --shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
   --transition: 0.2s ease;
 }
 
-/* TODO: Add a [data-theme="dark"] block here for dark mode.
-   Copilot can generate this for you — try:
-   "Add a dark mode theme using CSS custom properties" */
+[data-theme="dark"] {
+  --color-bg: #070607;
+  --color-bg-alt: #111827;
+  --color-text: #e5e7eb;
+  --color-text-muted: #94a3b8;
+  --color-accent: #4923a9;
+  --color-accent-hover: #93c5fd;
+  --color-border: #243041;
+  --color-surface: #111827;
+  --color-surface-hover: #172033;
+  --color-button-bg: #172033;
+  --color-button-text: #e5e7eb;
+  --shadow: 0 8px 24px rgba(0, 0, 0, 0.28);
+}
 
 /* ============================================================
    RESET & BASE
@@ -38,6 +53,7 @@ body {
   background-color: var(--color-bg);
   color: var(--color-text);
   line-height: 1.7;
+  transition: background-color var(--transition), color var(--transition);
 }
 
 a {
@@ -87,6 +103,32 @@ a:hover {
   color: var(--color-accent);
 }
 
+.theme-toggle {
+  border: 1px solid var(--color-border);
+  background: var(--color-button-bg);
+  color: var(--color-button-text);
+  border-radius: 999px;
+  padding: 0.65rem 1rem;
+  font: inherit;
+  font-weight: 600;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: background var(--transition), color var(--transition), border-color var(--transition), transform var(--transition);
+}
+
+.theme-toggle:hover {
+  background: var(--color-surface-hover);
+  transform: translateY(-1px);
+}
+
+.theme-toggle__icon {
+  display: inline-flex;
+  font-size: 1rem;
+  line-height: 1;
+}
+
 /* TODO: The nav isn't responsive on mobile yet.
    Ask Copilot: "Make this navbar collapse into a hamburger menu on small screens" */
 
@@ -100,7 +142,10 @@ a:hover {
   justify-content: center;
   text-align: center;
   padding: 4rem 2rem;
-  background: linear-gradient(135deg, var(--color-bg) 0%, var(--color-bg-alt) 100%);
+  background-image: url("images/migohara.jpeg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 
 .hero-content {
@@ -112,6 +157,21 @@ a:hover {
   font-weight: 800;
   margin-bottom: 1rem;
   line-height: 1.2;
+  color: #fff;
+  -webkit-text-stroke: 1.2px #000;
+  text-shadow:
+    1px 0 0 #000,
+    -1px 0 0 #000,
+    0 1px 0 #000,
+    0 -1px 0 #000;
+  display: inline-block;
+  overflow: hidden;
+  white-space: nowrap;
+  border-right: 0.14em solid #000;
+  width: 0;
+  animation:
+    typing-reset 6s steps(20, end) infinite,
+    blink-caret 0.75s step-end infinite;
 }
 
 .highlight {
@@ -120,8 +180,43 @@ a:hover {
 
 .hero-subtitle {
   font-size: 1.25rem;
-  color: var(--color-text-muted);
+  color: #fff;
   margin-bottom: 2rem;
+  -webkit-text-stroke: 1.0px #000;
+  text-shadow:
+    1px 0 0 #000,
+    -1px 0 0 #000,
+    0 1px 0 #000,
+    0 -1px 0 #000;
+}
+
+@keyframes typing-reset {
+  0% {
+    width: 0;
+  }
+
+  30% {
+    width: 100%;
+  }
+
+  66.6667% {
+    width: 100%;
+  }
+
+  100% {
+    width: 0;
+  }
+}
+
+@keyframes blink-caret {
+  from,
+  to {
+    border-color: transparent;
+  }
+
+  50% {
+    border-color: #000;
+  }
 }
 
 /* ============================================================
@@ -207,16 +302,15 @@ h2::after {
   margin-top: 1rem;
 }
 
-.avatar-placeholder {
+.avatar-image {
   width: 160px;
   height: 160px;
   border-radius: 50%;
-  background: var(--color-bg-alt);
+  object-fit: cover;
+  object-position: center;
   border: 3px solid var(--color-border);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 3rem;
+  display: block;
+  box-shadow: var(--shadow);
 }
 
 /* ============================================================
@@ -226,10 +320,11 @@ h2::after {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
   gap: 1.5rem;
+  margin-top: 1.5rem;
 }
 
 .project-card {
-  background: var(--color-bg);
+  background: var(--color-surface);
   border: 1px solid var(--color-border);
   border-radius: var(--radius);
   padding: 1.5rem;
@@ -292,12 +387,11 @@ h2::after {
 
 .skill-badge {
   padding: 0.5rem 1rem;
-  background: var(--color-bg-alt);
+  background: var(--color-surface);
   border: 1px solid var(--color-border);
   border-radius: var(--radius);
   font-size: 0.9rem;
   font-weight: 500;
-  /* TODO: Ask Copilot to add an emoji or icon prefix to each badge */
 }
 
 /* ============================================================
@@ -313,6 +407,7 @@ h2::after {
   display: flex;
   flex-wrap: wrap;
   gap: 1rem;
+  margin-top: 1rem;
 }
 
 /* ============================================================
@@ -336,7 +431,7 @@ footer {
     grid-template-columns: 1fr;
   }
 
-  .avatar-placeholder {
+  .avatar-image {
     width: 100px;
     height: 100px;
   }

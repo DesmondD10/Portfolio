@@ -6,25 +6,18 @@
 // ============================================================
 const projects = [
   {
-    title: "Project One",
-    description: "A short description of what this project does and why you built it.",
-    tags: ["Python", "Flask"],
-    github: "https://github.com/yourusername/project-one",
+    title: "Personal Analytics Dashboard",
+    description: "Our goal was to build a full-stack web application using React and Spring Boot that allows users to track, manage, and analyze personal data.",
+    tags: ["JavaScript", "Html", "CSS", "React", "Spring Boot"],
+    github: "https://github.com/CR-Miller/Data-Tracking-Personal-Analytics.git",
     demo: null,
   },
   {
-    title: "Project Two",
-    description: "Another project you're proud of. What problem did it solve?",
-    tags: ["JavaScript", "React"],
-    github: "https://github.com/yourusername/project-two",
+    title: "NetPlay TicTacToe - Networked Multiplayer Game",
+    description: "A robust client-server multiplayer Tic-Tac-Toe game built with C#/.NET, featuring asynchronous TCP networking, comprehensive error handling, and automatic reconnection logic.",
+    tags: ["C#", ".NET"],
+    github: "https://github.com/Breniah/NetPlay.git",
     demo: "https://yourproject.netlify.app",
-  },
-  {
-    title: "Project Three",
-    description: "Keep it brief — one or two sentences is plenty.",
-    tags: ["Java", "Algorithms"],
-    github: "https://github.com/yourusername/project-three",
-    demo: null,
   },
 ];
 
@@ -80,12 +73,45 @@ function renderSkills() {
 
 // ============================================================
 // DARK MODE TOGGLE
-// TODO: Implement this! Here's a stub to get you started.
-// Ask Copilot (inline chat on this function): "Implement dark mode
-// toggle that saves preference to localStorage"
 // ============================================================
+const themeStorageKey = "theme";
+
+function applyTheme(theme) {
+  document.documentElement.setAttribute("data-theme", theme);
+
+  const themeToggle = document.getElementById("theme-toggle");
+  if (!themeToggle) return;
+
+  const isDark = theme === "dark";
+  const toggleIcon = themeToggle.querySelector(".theme-toggle__icon");
+  const toggleLabel = themeToggle.querySelector(".theme-toggle__label");
+
+  if (toggleIcon) {
+    toggleIcon.textContent = isDark ? "☀️" : "🌙";
+  }
+
+  if (toggleLabel) {
+    toggleLabel.textContent = isDark ? "Light mode" : "Dark mode";
+  }
+
+  themeToggle.setAttribute("aria-pressed", String(isDark));
+}
+
+function getPreferredTheme() {
+  const savedTheme = localStorage.getItem(themeStorageKey);
+  if (savedTheme === "light" || savedTheme === "dark") {
+    return savedTheme;
+  }
+
+  return window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+}
+
 function toggleDarkMode() {
-  // Your implementation here
+  const currentTheme = document.documentElement.getAttribute("data-theme") === "dark" ? "dark" : "light";
+  const nextTheme = currentTheme === "dark" ? "light" : "dark";
+
+  localStorage.setItem(themeStorageKey, nextTheme);
+  applyTheme(nextTheme);
 }
 
 // ============================================================
@@ -100,9 +126,14 @@ function updateYear() {
 // INIT
 // ============================================================
 document.addEventListener("DOMContentLoaded", () => {
+  applyTheme(getPreferredTheme());
+
+  const themeToggle = document.getElementById("theme-toggle");
+  if (themeToggle) {
+    themeToggle.addEventListener("click", toggleDarkMode);
+  }
+
   renderProjects();
   renderSkills();
   updateYear();
-
-  // TODO: Wire up your dark mode toggle button here once you add it
 });

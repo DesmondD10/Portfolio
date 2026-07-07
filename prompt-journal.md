@@ -20,22 +20,28 @@ For each entry, note:
 
 ### Entry 1
 - **Feature/task:** 
+  For this feature I needed to make a short bio for my Hero
 - **Copilot feature used:** 
+  I used ask for this.
 - **Prompt:**
-  > 
+  The prompt I used was asking to make a short bio based on my interests
 - **Result:** 
+  The result I got was exactly what I needed for my portfolio.
 - **What I changed or did next:** 
-
+  I didn't really change anything except for some of the phrasing.
 ---
 
 ## Phase 2 — Guided Tasks
 
 ### Entry 2 — About section
 - **Copilot feature used:** 
+  For my about section i also used ask
 - **Prompt:**
-  > 
+  For the prompt I gave some background on myself and asked for a bio basically.
 - **Result:** 
+  The result I got was satisfactoty, but I still ended up changing the wording to make it sound more like me.
 - **What I changed or did next:** 
+  I just changed some of the wording around.
 
 ---
 
@@ -50,9 +56,11 @@ For each entry, note:
 
 ### Entry 4 — Dark mode
 - **Copilot feature used:** 
+  For this feature I needed to make a light and dark mode switch 
 - **Prompt:**
-  > 
+  The prompt I used was "Hey, can you add a dark mode toggle button where it says to add one in index.html"
 - **Result:** 
+  The result I got was exactly what I needed for my portfolio.
 - **What I changed or did next:** 
 
 ---
