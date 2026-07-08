@@ -87,11 +87,11 @@ function applyTheme(theme) {
   const toggleLabel = themeToggle.querySelector(".theme-toggle__label");
 
   if (toggleIcon) {
-    toggleIcon.textContent = isDark ? "☀️" : "🌙";
+    toggleIcon.textContent = isDark ? "☀️" : "📽️";
   }
 
   if (toggleLabel) {
-    toggleLabel.textContent = isDark ? "Light mode" : "Dark mode";
+    toggleLabel.textContent = isDark ? "Light mode" : "Noir mode";
   }
 
   themeToggle.setAttribute("aria-pressed", String(isDark));
