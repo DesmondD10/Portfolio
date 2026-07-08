@@ -105,6 +105,38 @@ a:hover {
   color: var(--color-accent);
 }
 
+.nav-actions {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.nav-menu-toggle {
+  display: none;
+  border: 1px solid var(--color-border);
+  background: var(--color-button-bg);
+  color: var(--color-button-text);
+  border-radius: 999px;
+  padding: 0.65rem 1rem;
+  font: inherit;
+  font-weight: 700;
+  cursor: pointer;
+  align-items: center;
+  gap: 0.5rem;
+  transition: background var(--transition), color var(--transition), border-color var(--transition), transform var(--transition);
+}
+
+.nav-menu-toggle:hover {
+  background: var(--color-surface-hover);
+  transform: translateY(-1px);
+}
+
+.nav-menu-toggle__icon {
+  display: inline-flex;
+  font-size: 1rem;
+  line-height: 1;
+}
+
 .theme-toggle {
   border: 1px solid var(--color-border);
   background: var(--color-button-bg);
@@ -596,5 +628,105 @@ footer {
   .avatar-image {
     width: 100px;
     height: 100px;
+  }
+}
+
+@media (max-width: 600px) {
+  .navbar {
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    padding: 1rem;
+  }
+
+  .nav-actions {
+    margin-left: auto;
+  }
+
+  .nav-menu-toggle {
+    display: inline-flex;
+  }
+
+  .nav-links {
+    display: none;
+    order: 3;
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0.75rem;
+    padding: 0.5rem 0 0.25rem;
+  }
+
+  .nav-links li {
+    flex: 0 0 auto;
+  }
+
+  .navbar.nav-open .nav-links {
+    display: flex;
+  }
+
+  .theme-toggle {
+    padding: 0.55rem 0.9rem;
+  }
+
+  .hero {
+    min-height: auto;
+    padding: 3rem 1rem 2.5rem;
+  }
+
+  .hero-content {
+    max-width: 100%;
+  }
+
+  .hero h1 {
+    font-size: clamp(1.7rem, 10vw, 2.4rem);
+    white-space: normal;
+    width: auto;
+    border-right: 0;
+    animation: none;
+  }
+
+  .hero-subtitle {
+    font-size: 1rem;
+  }
+
+  .film-marquee {
+    margin-top: 1rem;
+    padding: 0.5rem 0;
+  }
+
+  .film-marquee__track {
+    font-size: 0.72rem;
+    gap: 1.25rem;
+    animation-duration: 14s;
+  }
+
+  .film-marquee__track span::before {
+    margin-right: 1.25rem;
+  }
+
+  .watchlist-strip {
+    padding: 0.85rem;
+    border-radius: 1rem;
+  }
+
+  .watchlist-strip__items {
+    gap: 0.65rem;
+  }
+
+  .watchlist-poster {
+    width: 72px;
+  }
+
+  .watchlist-poster figcaption {
+    font-size: 0.68rem;
+  }
+
+  .projects-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .project-card {
+    padding: 1.25rem;
   }
 }

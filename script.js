@@ -128,9 +128,53 @@ function updateYear() {
 document.addEventListener("DOMContentLoaded", () => {
   applyTheme(getPreferredTheme());
 
+  const navbar = document.querySelector(".navbar");
+  const navMenuToggle = document.getElementById("nav-menu-toggle");
+  const navLinks = document.querySelectorAll(".nav-links a");
+
   const themeToggle = document.getElementById("theme-toggle");
   if (themeToggle) {
     themeToggle.addEventListener("click", toggleDarkMode);
+  }
+
+  if (navbar && navMenuToggle) {
+    const updateNavMenuButton = (isOpen) => {
+      const menuIcon = navMenuToggle.querySelector(".nav-menu-toggle__icon");
+      const menuLabel = navMenuToggle.querySelector(".nav-menu-toggle__label");
+
+      navMenuToggle.setAttribute("aria-expanded", String(isOpen));
+
+      if (menuIcon) {
+        menuIcon.textContent = isOpen ? "✕" : "☰";
+      }
+
+      if (menuLabel) {
+        menuLabel.textContent = isOpen ? "Close" : "Menu";
+      }
+
+      navMenuToggle.setAttribute("aria-label", isOpen ? "Close navigation menu" : "Open navigation menu");
+    };
+
+    navMenuToggle.addEventListener("click", () => {
+      const isOpen = navbar.classList.toggle("nav-open");
+      updateNavMenuButton(isOpen);
+    });
+
+    navLinks.forEach((link) => {
+      link.addEventListener("click", () => {
+        if (navbar.classList.contains("nav-open")) {
+          navbar.classList.remove("nav-open");
+          updateNavMenuButton(false);
+        }
+      });
+    });
+
+    window.addEventListener("resize", () => {
+      if (window.innerWidth > 600 && navbar.classList.contains("nav-open")) {
+        navbar.classList.remove("nav-open");
+        updateNavMenuButton(false);
+      }
+    });
   }
 
   renderProjects();
